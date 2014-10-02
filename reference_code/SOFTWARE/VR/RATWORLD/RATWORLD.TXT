@@ -1,0 +1,179 @@
+The application is intended to be an entirely interactive VR world.
+
+The world will, obviously, start out empty.  Objects, which have been designed
+using the World Object Creator, will be able to be linked and placed in the
+world.
+
+The world will need to be 3D grid mapped.  Initially, the grid will have a
+maximum size along each 3D axis of + or - 32000 units (to be defined later).
+
+At a later date, the world size will be unlimited, using a matricing technique
+that will allow for frids within grids, etc.
+
+Objects will be allowed to be "linked" to other objects such as applications
+or data.
+
+Objects will be allowed to be set in motion.  In other words, it may interact
+with the world and, more specific, other objects.
+
+The user may enter the world as an observer, and object, or a Lord.
+	- as an observer, they may only example (examine and sample) the world
+	  and objects.
+	- as an object, they have all the power of the observer, but they may also
+	  interact with other objects.
+	- as a lord, they have all the power of the object, but they may also
+	  CONTROL other objects as well as remove or create objects from the world
+
+
+Description	 and Reasons for each user "level"
+	- a user of observer status may move within the world in which they carry
+	that status.  Those of higher status may enter the world as an observer if
+	they choose.  The observer may only manipulate objects which have been
+	authorized for access by an observer.  Information that can be obtained
+	from these objects will be determined by the objects definitions.
+	The reason for having observer status may be if the user is training in the
+	world, or if the user would like to see what the world may offer.
+	- users with object status may interact with all other objects which have
+	been defined to allow access by thoses at this level.  The contral that a
+	user with object status may have over these objects will be determined by
+	the objects definition.
+	The reason for a user to have this status would be if the user is to main-
+	tain information within this world.  They may also create new objects in
+	order to make their work easier such as by adding a new processor object.
+	- a Lord
+
+Under normal circumstances, the user moves around within the world, therefore
+	movement is based on the user's viewpoint.
+
+If an object is available and is able to be manipulated, the user may select
+	it.  At that point, that object and only that object is manipulated and
+	moved.
+
+The object must be able to be "unselected".
+
+Objects that require "info-objects" will:
+	- search for the "info-object"
+	- once found, will call the "info-object" to it
+	- if the "info-object can't come (another object is already using it),
+	the "process-object" will move it.
+
+More towards sound:
+	- the ability to link in any audio signal, which may be listened through
+	the headset of an HMD to allow the user to listen to anything
+		- note:  system messages will, to whomever requires the message,
+		overrid the audio information for the duration of the message
+
+Single VR System will include:
+	- VR Station
+	- HMD
+	- Glove
+	- Head Positional Tracker
+	- Hand Positional Tracker
+	- External Audio/Video
+	- Optional External Viewing Monitor (Seperate or via HMD video passtrough)
+
+VR Station to include(minimum)
+	- 486DX33 w/ 128k cache
+	- 4MB Ram
+	- 270MB HD < 15ms
+	- 3.5" Floppy
+	- 1p, 2s, 1g ports
+	- CD ROM < 280ms
+	- Sound Board (Sound Blaster)
+	- 1024x768 video board w/ 1MB Ram
+	- Video Toaster Board (Video Blaster)
+	- Modem
+
+Ultimate VR Station(current for personal use)
+	- Altos 15000 (multi-processor)
+
+Multiple VR Systems to be linked via network or modem hard/soft ware
+
+When entering the VR world, every user object will be given an info object
+	called "***'s Guide to ***world" which will give the user object instant
+	access to information on how to get around in the world.  It will have an
+	interactive map and info on objects CURRENTLY in the world
+
+Ever travel at the speed of light?  You may soon be able to in the virtual
+	world (and they said it couldn't be done, hah!)  The initial VR system
+	will allow you to travel at the speed of electrical current, but with the
+	advent of computer systems and networks which utilize fibre optics, light
+	speed travel will be obtained.  Instant access to any destination you wish
+
+Every VR Station should come equipped with doorbells and warning systems.  The
+	user should be notified of any real world interaction and hazards
+
+Data Security will be of paramount importance.  With the advent of VR lock
+	picks, destructive forces, etc
+
+As in WIndows, any application that is non-VR may be linked into the world via
+	initialization packets.  Staying on the Windows scenario, applications that
+	only run under a certain environment would be accessible through the
+	environment through VR.  You would access Windows Object, which would load
+	up and appear as an opened Window in all its "splendor".  Using a keyboard
+	object and a mouse object, which would be linked to the windows object,
+	you could then access the most popular applications which wouldn't othewise
+	work in VR.  THe same could be applied to any operating system application
+	that wasn't VR based
+
+A form of "auto-pilot" used in conjunction with the mapping system could, with
+	a specific command, take you directly to the data or vice-versa (if possible)
+
+The ability to portal out from any point in VR space would be recommended
+
+Example of Data Entry using VR:
+	- Any number of little baby Robin objects in a Nest object being fed data
+	objects which had been received into the VR world via a scanner.
+
+Some VR worlds:
+	- VR Off-Road				- VR Stone/Medieval Age
+	- VR Casino					- VR Psychadelia
+
+Each VR world would have a monetory system if required.  You would pay for a
+	VR newspaper object, a VR videogame object, etc.  VR information and
+	entertainment would require payment of some kind
+
+The worlds:
+	- Interfaces:
+		- HMD
+		- Glove
+		- both require software drivers
+	- Players:
+		- process objects
+		- data objects
+		- user objects
+		- NPOs (non-player objects that do nothing but fill the voids)
+		- requires rules and regulations governing action and interaction
+	- Processes:
+		- world would time slice/CPU share
+			- query objects for action
+			- if no action, process movement
+			- check time slice clock
+			- if time slice > ACCEPTABLE (User object to User object process)
+				- remove NPOs to speed things up
+		- matricing:
+			- major, minor, local: can't see beyond local
+		- must constantly process while querying and have a queue for movement
+			and action for each object
+		- each process (action) should be a module
+			- each module should take the same amount of (short) time
+			- queues will be one or two units long; to track yes/no based Q's
+		- check movement queue, process if loaded
+		- check action queue, process if loaded
+		- repeat as necessary after checking time slice
+
+"Keevan's Guide to RatWorld"
+
+Create hand (wire frame model)
+	- plot in 3D space
+	- need to link mouse and arrow keys (keyboard):
+		- left move		- rotate left
+		- right move	- rotate right
+		- forward move	- nose down
+		- backward move	- nose up
+		- left arrow	- move left
+		- right arrow	- move right
+		- up arrow		- move forward
+		- down arrow	- move backward
+		- pg up key		- move up
+		- pg dn key		- move down

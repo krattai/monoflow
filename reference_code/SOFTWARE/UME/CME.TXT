@@ -1,0 +1,9 @@
+Make a command line "operating system" that is actually just an environment
+that looks and acts like DOS but is just easier to use.
+
+It should contain the standard commands but will include switches that
+are currently unavailable under DOS.
+
+It may then learn...  ie. if you tell it to do something that it doesn't know
+how to do or doesn't understand, it will allow you to define the process
+and will ever after "know" what you mean.

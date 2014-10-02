@@ -1,0 +1,509 @@
+Farm Record One Application
+
+All modules must have same look and feel
+All modules will have same look and feel as booklet
+Display and entry based on current interface tools
+Default measurements are metric, allow for user to change
+Be sure to reference major module instructions for appropriate information
+
+-----------------------------------------------------------------------------
+
+Tools for Application
+	- includes:
+		- help()
+		- credits() (include software development tools)
+		- database tools
+
+time to complete:  n/a
+programmer:  Kevin Rattai
+due date:  as required
+completion date:  n/a
+time to date:  6hrs
+extension date:  n/a
+notes: ?
+
+-----------------------------------------------------------------------------
+
+Conversion Module - 10.1
+	- will accept value and conversion "direction" (i-m or m-i)
+	- will return converted value
+	- requires conversion table
+
+time to complete:  8hrs ( < 1wk )
+programmer:  Scott Dillabough
+due date:  Sept. 26/93
+completion date:  Sept. 29/93
+time to date:  3hrs
+extension date: n/a
+notes: temperature conversions do not work
+
+-----------------------------------------------------------------------------
+
+Inventory Module:
+	- must update Operating Net Worth Statement as occured
+	- default depreciation will be reducing balance method
+		- allow for user to change method
+
+(consists of):
+Real Estate Module - 10.2
+	- information required as per FR1 booklet
+	- allow for entry of description, etc.
+		- calculate appropriate values
+	- allow for entry of changes/adjustments, depreciation, etc
+	- includes both owned and rented
+	- displayed on seperate screens
+	- consult current menu selection process
+	- apply appropriate values for year end from indicated modules
+
+time to complete: 14hrs
+programmer:  Kevin Rattai
+due date:  Sept. 26/93
+completion date:  Sept. 29/93
+time to date:  10hrs
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Machinery and Equipment Module (includes landlord's M&F) - 10.3
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+	- apply appropriate values for year end from indicated modules
+
+time to complete:  12hrs
+programmer:  Anna Laterza
+due date:  Sept. 29/93
+completion date:  Oct. 9/93
+time to date:  ?
+extension date:  Oct. 10/93
+notes: syntax errors, no forms or extension modules
+
+-----------------------------------------------------------------------------
+
+Livestock Module - 10.4
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  10hrs
+programmer:  Terry Brown
+due date:  Oct. 1/93
+completion date:  ?
+time to date:  ?
+extension date:  Oct. 6/93
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Grain and Feed Module - 10.5
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  10hrs
+programmer:  Derek LaPorte
+due date:  Oct. 7/93
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Supplies Module - 10.6
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  10hrs
+programmer:  Scott Dillabough
+due date:  Oct. 9/93
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Farm Accounts Payable and Receivable Module - 10.7
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+	- apply appropriate values for year end from indicated modules
+
+time to complete:  14hrs
+programmer:  Kevin Rattai
+due date:  Oct. 4/93
+completion date:  Oct. 4/93
+time to date:  10hrs
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Household and Personal Module - 10.8
+	- includes personal A/P and A/R
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+	- apply appropriate values for year end from indicated modules
+
+time to complete:  10hrs
+programmer:  Kevin Rattai
+due date:  Oct. 9/93
+completion date:  Oct. 9/93
+time to date:  4hrs
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Operating Net Worth Module - 10.9
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+	- must be completed as last module of Inventory Module
+	- apply appropriate values from indicated modules
+
+time to complete:  10hrs
+programmer:  Anna Laterza
+due date:  Oct. 16/93
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Expenses Module:
+	- must update appropriate files as occured
+	- note general and specific instructions
+
+(consists of):
+Special Account for Bulk Purchases Module - 10.10
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  Kevin Rattai
+due date:  Oct. 11/93
+completion date:  Oct. 11/93
+time to date:  4hrs
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Car and Truck Expenses Module - 10.11
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  Kevin Rattai
+due date:  Oct. 12/93
+completion date:  Oct. 12/93
+time to date:  4hrs
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Tractor and Combine Expenses Module - 10.12
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  Kevin Rattai
+due date:  Oct. 13/93
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Other Equipment Expenses Module - 10.13
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Building Repairs Expenses Module - 10.14
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Crop Expenses Module - 10.15
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Cattle, Swine, Poultry, and Other Livestock Expenses Module - 10.16
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Farm Overhead Expenses Module - 10.17
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Hired Labour Expenses Module - 10.18
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Tool and Capital Purchase Expenses Module - 10.19
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Outstanding Accounts and Farm Loans Payment Expenses Module - 10.20
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Landlord Transaction Expenses Module - 10.21
+	- info required as per FR1 booklet
+	- allow for pre-listed items
+		- calculate appropriate values
+	- allow for non-listed items
+
+time to complete:  8hrs
+programmer:  ?
+due date:  ?
+completion date:  ?
+time to date:  ?
+extension date: n/a
+notes: n/a
+
+-----------------------------------------------------------------------------
+
+Farm Program Breakdown
+
+Information Requirements
+	- Inventory
+		- Equipment
+			- Vehicles
+				- Description
+				- Cost
+			- Tractors
+				- Description
+				- Cost
+			- Cultivators, etc.
+				- Description
+				- Cost
+			- Augers and other grain moving devices
+				- Description
+				- Cost
+			- Hopper, Flatbed and other trailers
+				- Description
+				- Cost
+			- Other Equipment
+				- Description
+				- Cost
+		- Storage
+			- Seed
+				- Type
+				- Family Name
+				- Amount
+				- Cost
+			- Fertilizer
+				- Name
+				- Amount
+				- Cost
+			- Chemical
+				- Name
+				- Amount
+				- Cost
+		- Land
+			- Physical Location
+			- Size
+			- Cost
+		- Buildings
+			- Description
+			- Location
+			- Cost
+				- Original Value
+				- Depriciation
+				- Current Value
+			- Upgrades
+				- Description
+				- Cost
+		- Other
+
+	- Field Management (re: seed production, forage crops)
+		- Current Useage
+			- Crop
+				- Type (Wheat, Oats, Barley, etc.)
+				- Family Name (Bedford, Roblin, Commercial, etc.)
+				- Input
+					- Amount
+					- Cost
+				- Return
+					- Amount
+					- Cost
+			- Fertilizer Useage
+				- Type
+				- Input
+				- Cost
+			- Chemical Useage
+				- Type
+				- Input
+				- Cost
+			- Graphical Display
+				- Size
+				- "Shape"
+				- Contours
+				- Buildings
+				- Trees, Rocks, and other "obsticals"
+			- Field Maintenance
+				- Description
+				- Cost
+		- History
+			- As per Current
+			- Minimum 7 year history
+
+	- Field Management (re: animal production)
+		- Current Useage
+			- Bedding
+				- Type (Wheat, Oats, Barley, etc.)
+				- Family Name (Bedford, Roblin, Commercial, etc.)
+				- Input
+					- Amount
+					- Cost
+			- Fertilizer Useage
+				- Type
+				- Input
+				- Cost
+			- Chemical Useage
+				- Type
+				- Input
+				- Cost
+			- Graphical Display
+				- Size
+				- "Shape"
+				- Contours
+				- Buildings
+				- Trees, Rocks, and other "obsticals"
+			- Field Maintenance
+				- Description
+				- Cost
+		- History
+			- As per Current
+			- Minimum 7 year history
+
+	- Poultry Production
+	- Egg Production
+	- Beef Production
+	- Dairy Production
+	- Swine Production
+	- Sheep Production
+
+	- General Accounting
+		- Income
+		- Expenses
+		- General Ledger
+		- Payables
+		- Receivables

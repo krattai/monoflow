@@ -1,0 +1,7 @@
+Allow a "hot key" to enter new customer from anywhere
+
+Should have help from anywhere
+
+Should have popup calculator & calander from anywhere:
+	- therefore each module recognize those keys, or a keyboard filter
+	  (TSR or something) be used

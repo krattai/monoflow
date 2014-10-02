@@ -1,0 +1,260 @@
+/* VRHAND03.C: Create 3D Hand for VR applications
+
+	Mouse left 	- hand left
+	Mouse right	- hand right
+	Mouse up	- hand up
+	Mouse down	- hand down
+	Cursor up	- hand in
+	Cursor down	- hand out
+
+	Created by:		Kevin Rattai
+	Date created:	May 1, 1993
+
+*/
+
+#include<graphics.h>
+#include<conio.h>
+#include<math.h>
+#include"rat.h"
+#include"keyio.h"
+
+#define HANDCOLOR	2
+#define NOHAND		0
+
+/* function prototypes */
+int checkinput(void);
+void turnon(void);
+void turnoff(void);
+void drawhand(int x, int y, int x1, int y1);
+void erasehand(void);
+void calcpos(int x, int y);
+void movehand(int x, int y);
+
+
+RATINFO rat;
+int graphdriver = VGA, graphmode = VGAHI;
+struct text_info original;
+int hand[18];
+
+void main(void)
+{
+	int key,
+		v,
+		h;
+	int oldv=0,oldh=0;
+	int x1,y1,x2,y2;
+
+	turnon();
+
+	initrat(&rat);
+	key = checkinput();
+	h = rat.horiz;
+	v = rat.verti;
+	calcpos(h,v);
+	oldh=h;
+	oldv=v;
+	drawhand(h,v,oldh,oldv);
+
+	do {
+		key = checkinput();
+		h = rat.horiz;
+		v = rat.verti;
+		switch(key) {
+			case UP:	erasehand();
+						hand[1]++;
+						hand[4]--;
+						hand[6]++;
+						hand[7]++;
+						hand[12]--;
+						hand[13]++;
+						drawhand(h,v,oldh,oldv);
+						break;
+			case DOWN:	erasehand();
+						hand[1]--;
+						hand[4]++;
+						hand[6]--;
+						hand[7]--;
+						hand[12]++;
+						hand[13]--;
+						drawhand(h,v,oldh,oldv);
+						break;
+/*			case LEFT:	hand[0]=x;
+						hand[1]=y-17;
+						hand[2]=x;
+						hand[3]=y+8;
+						hand[4]=x-10;
+						hand[5]=y-12;
+						hand[6]=x;
+						hand[7]=y;
+						hand[8]=x+10;
+						hand[9]=y-12;
+						hand[10]=x;
+						hand[11]=y;
+						drawhand(h,v,oldh,oldv);
+						break;
+			case RIGHT:	hand[0]=x;
+						hand[1]=y-17;
+						hand[2]=x;
+						hand[3]=y+8;
+						hand[4]=x-10;
+						hand[5]=y-12;
+						hand[6]=x;
+						hand[7]=y;
+						hand[8]=x+10;
+						hand[9]=y-12;
+						hand[10]=x;
+						hand[11]=y;
+						drawhand(h,v,oldh,oldv);
+						break;
+			case PGUP:	hand[0]=x;
+						hand[1]=y-17;
+						hand[2]=x;
+						hand[3]=y+8;
+						hand[4]=x-10;
+						hand[5]=y-12;
+						hand[6]=x;
+						hand[7]=y;
+						hand[8]=x+10;
+						hand[9]=y-12;
+						hand[10]=x;
+						hand[11]=y;
+						drawhand(h,v,oldh,oldv);
+						break;
+			case PGDN:	hand[0]=x;
+						hand[1]=y-17;
+						hand[2]=x;
+						hand[3]=y+8;
+						hand[4]=x-10;
+						hand[5]=y-12;
+						hand[6]=x;
+						hand[7]=y;
+						hand[8]=x+10;
+						hand[9]=y-12;
+						hand[10]=x;
+						hand[11]=y;
+						drawhand(h,v,oldh,oldv);
+						break; */
+		}
+		if(oldh!=h || oldv!=v)
+		{
+			erasehand();
+			drawhand(h,v,oldh,oldv);
+			oldh=h;
+			oldv=v;
+		}
+	} while(!(key == ESC));
+
+	ratoff();
+
+	turnoff();
+}
+
+void drawhand(int x, int y, int x1, int y1)
+{
+	movehand(x-x1,y-y1);
+	setcolor(HANDCOLOR);
+	line(hand[0],hand[1],hand[3],hand[4]);
+	line(hand[6],hand[7],hand[9],hand[10]);
+	line(hand[12],hand[13],hand[15],hand[16]);
+}
+
+void movehand(int x, int y)
+{
+	hand[0]+=x;
+	hand[1]+=y;
+	hand[3]+=x;
+	hand[4]+=y;
+	hand[6]+=x;
+	hand[7]+=y;
+	hand[9]+=x;
+	hand[10]+=y;
+	hand[12]+=x;
+	hand[13]+=y;
+	hand[15]+=x;
+	hand[16]+=y;
+}
+
+void calcpos(int x, int y)
+{
+	hand[0]=x;
+	hand[1]=y-17;
+	hand[2]=0 /* z */;
+	hand[3]=x;
+	hand[4]=y+8;
+	hand[5]=0 /* z */;
+	hand[6]=x-10;
+	hand[7]=y-12;
+	hand[8]=0 /* z */;
+	hand[9]=x;
+	hand[10]=y;
+	hand[11]=0 /* z */;
+	hand[12]=x+10;
+	hand[13]=y-12;
+	hand[14]=0 /* z */;
+	hand[15]=x;
+	hand[16]=y;
+	hand[17]=0 /* z */;
+}
+
+void erasehand(void)
+{
+	setcolor(NOHAND);
+	line(hand[0],hand[1],hand[3],hand[4]);
+	line(hand[6],hand[7],hand[9],hand[10]);
+	line(hand[12],hand[13],hand[15],hand[16]);
+}
+
+void turnon(void)
+{
+	/* setup fonts */
+	rename("ccslchr1.fnt","goth.chr");
+	rename("ccslchr2.fnt","litt.chr");
+	rename("ccslchr3.fnt","sans.chr");
+	rename("ccslchr4.fnt","trip.chr");
+
+	/* setup graphics interface */
+	rename("ccslgfx1.gri","att.bgi");
+	rename("ccslgfx2.gri","cga.bgi");
+	rename("ccslgfx3.gri","egavga.bgi");
+	rename("ccslgfx4.gri","herc.bgi");
+	rename("ccslgfx5.gri","ibm8514.bgi");
+	rename("ccslgfx6.gri","pc3270.bgi");
+
+	/* Set up graphics */
+	gettextinfo(&original);
+	initgraph(&graphdriver, &graphmode, "");
+}
+
+void turnoff(void)
+{
+	closegraph();
+
+	textattr(original.attribute);
+	window(original.winleft,
+			original.wintop,
+			original.winright,
+			original.winbottom);
+
+	/* shutdown fonts */
+	rename("goth.chr","ccslchr1.fnt");
+	rename("litt.chr","ccslchr2.fnt");
+	rename("sans.chr","ccslchr3.fnt");
+	rename("trip.chr","ccslchr4.fnt");
+
+	/* shutdown graphics interface */
+	rename("att.bgi","ccslgfx1.gri");
+	rename("cga.bgi","ccslgfx2.gri");
+	rename("egavga.bgi","ccslgfx3.gri");
+	rename("herc.bgi","ccslgfx4.gri");
+	rename("ibm8514.bgi","ccslgfx5.gri");
+	rename("pc3270.bgi","ccslgfx6.gri");
+}
+
+int checkinput(void)
+{
+	int buts;
+
+	buts = getratinput(&rat);
+	if(keypress()) return(Get_key());
+	return(buts);
+}

@@ -1,0 +1,186 @@
+Benchmark 1				Due:  June 12/93		Programmer:  Terry Brown
+	- Setup Screen 1 to Display information in the form:
+
+		Project Number:	[Project number]
+		Project Name:	[Project name]
+
+		Proposer: [Employee name]
+		Project Status: [Activity] [Proposal Written]
+
+		Completion Date
+		---------------
+		Estimated: [Est. Completion Date]	Actual: [Actual Completion Date]
+
+		Project Leader						Project Team
+		--------------						------------
+		[Employee name]						[Employee name]
+											etc.
+
+time to date:  4 hrs
+
+Benchmark 2				Due:  August 25/93		Programmer:  Terry Brown
+	- Setup Screen 2 to Display hours on project in the form:
+
+		Project Number:	[Project number]
+		Project Name:	[Project name]
+
+		Project Leader Total Hours:	[Total leader hours]
+
+		Project Team Total Hours:	[Total project team hours]
+
+		Team Hours Breakdown
+		--------------------
+		[Employee name]				[Total Employee Hours for Project]
+
+time to date:  ?
+
+Benchmark 3				Due:  June 26/93		Programmer:  ?
+	- Allow user to input Project information as per Screen 1
+
+time to date:  ?
+
+Benchmark 4				Due:  July 3/93			Programmer:  ?
+	- Setup Screen 3 to Enter Hourly information in the form:
+
+		Project Number:	[Project number]
+
+		Week ending:	[Week ending]
+
+		Employee Number:	[Employee number]
+		Hours Worked:		[Employee Hours Worked]
+
+time to date:  ?
+
+Benchmark 5				Due:  July 10/93		Programmer:  ?
+	- Allow user to input Project Hours Worked as per Screen 3
+
+time to date:  ?
+
+Benchmark 6				Due:  July 17/93		Programmer:  ?
+	- Allow user to display Hours Worked as per Screen 2
+
+time to date:  ?
+
+
+- This application must keep track of both Inhouse and External Projects
+- Need to keep track of all hours worked on each project
+	- Leader hours + team members hours = total hours on project
+	- Hours tracked as a weekly total (Sunday - Saturday)
+
+Data Example Information (is actual information)
+
+Inhouse
+
+Number	Name				Proposer	Leader		Team
+------	----				--------	------		----
+   1	Catalogue			Rich		Rich		Keevan
+													Paul
+
+   2	Employee Tracker	Howeller	Howeller	Anna
+
+   3	Client Tracker		Paul		Paul		Scott
+
+   4	Install Program		Rat			Rat			Derek
+													Howeller
+
+   5	Project Tracker		Rat			Rat			Terry
+													Steve
+
+   6	Code Generator		Rat			Rat			Rat
+
+   7	Icon Generator		Rat
+
+External
+
+Number	Name				Proposer	Leader		Team
+------	----				--------	------		----
+As per R&DPRJS.WRI
+
+
+- File Structures:
+	- Project File Structure			type		length		Format/Range
+		- Number						integer		     4		Inhouse
+																0001 - 4999
+																External
+																5000 - 9999
+		- Name							character	    30		any
+		- Proposer
+			- Employee number			integer		     4		0001 - 9999
+		- Leader
+			- Employee number			integer		     4		0001 - 9999
+		- Status
+			- Proposal Written			character		 1		Y(es),N(o)
+			- Activity					character		 1		I(n),A(ctive)
+		- Estimated Completion Date		date		     8		YY/MM/DD
+		- Actual Completion Date		date		     8		YY/MM/DD
+
+	- Project Team File
+		- Project Number				integer		     4		0001 - 9999
+		- Employee number				integer		     4		0001 - 9999
+
+	- Project Hours File
+		- Week Ending					date		     8		YY/MM/DD
+		- Project Number				integer		     4		0001 - 9999
+		- Employee number				integer		     4		0001 - 9999
+		- Hours Worked					float		     2.1	00.0 - 99.9
+
+Project numbers will currently be displayed as 0000->XX, they will be stored
+	as (example) 000110, new updated will change their version number and
+	will ship as a different product number.  Costs will be stored seperately
+	but will be displayed as a single project for now.
+	eg.		project #XXXX			Version X.X
+			etc...
+
+Project Tracker also to contain:
+	- Project Revenue Distribution
+	- information from sales -> distribution process -> direct cost payment
+													 -> wage payment -> H.R.
+													 \> profit (spin off)
+	\> this program is an "information filter"
+	- process:
+		read sales record
+		if company product
+			find appropriate project
+			if revenue + total revenue > total expense
+				if total revenue > total expense
+					apply to wages(revenue)
+				else
+					apply to wages(revenue + total revenue - total expense)
+			total revenue += revenue
+		repeat from top until EOF
+
+	- when viewing a project or set of projects:
+		- profit will be shown by acquiring and calculating:
+			total revenue - total expense = profit
+
+	Project Revenue/Expense File:
+		Project number, total revenue, total expense
+
+	Special Projects Wages File
+		Employee number
+		Amount owed
+	- if employee in file, add to amount owed
+	- if employee not in file, add employee number and amount owed
+	- if employee paid, remove employee from file
+
+	- Job Costing
+		- Based on:
+			Production	- consumable resources
+						- analysis
+						- design
+						- coding
+						- debugging
+						- testing
+			Packaging	- manuals
+						- media (shipping diskettes)
+						- container
+			Marketing	- public awareness
+						- demographic studies
+						- target group studies
+						- advertising
+						- breakeven analysis
+						- price determination
+			Distributing - shipping
+						- stocking fees
+			Labour		- direct
+						- indirect
