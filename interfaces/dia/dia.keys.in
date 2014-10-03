@@ -1,0 +1,5 @@
+
+application/x-dia-diagram:
+	open=dia %f
+	view=dia %f
+	icon-filename=@datadir@/icons/hicolor/48x48/apps/dia.png
