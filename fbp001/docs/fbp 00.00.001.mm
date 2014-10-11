@@ -1,0 +1,13 @@
+<map version="0.9.0">
+<!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
+<node CREATED="1391553984580" ID="ID_1383861199" MODIFIED="1391554071261" TEXT="fbp 00.00.001">
+<node CREATED="1391554088021" ID="ID_1646139098" MODIFIED="1391554114494" POSITION="right" TEXT="proto">
+<node CREATED="1391555603401" ID="ID_1218216755" MODIFIED="1391555615600" TEXT="break down components">
+<node CREATED="1391555635959" ID="ID_676816036" MODIFIED="1391555641319" TEXT="functional layer"/>
+<node CREATED="1391555644799" ID="ID_1156417947" MODIFIED="1391555651454" TEXT="graphical layer"/>
+</node>
+<node CREATED="1391554116508" ID="ID_227711603" MODIFIED="1391554150759" TEXT="upgrade c"/>
+<node CREATED="1391554125961" ID="ID_94997354" MODIFIED="1391554129643" TEXT="learn go"/>
+</node>
+</node>
+</map>

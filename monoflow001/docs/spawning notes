@@ -1,0 +1,66 @@
+What about pthread?
+http://timmurphy.org/2010/05/04/pthreads-in-c-a-minimal-working-example/
+
+Spawn / fork / exec
+http://faq.cprogramming.com/cgi-bin/smartfaq.cgi?answer=1044654269&id=1043284392
+
+Best guess is FIFO.
+
+Should do some manual traces to see how system builds out
+compound nodes.  Also, need to investigate how the parent
+application responds if a child loads a child and then unloads
+itself.  Can the second child know how to return to parent?
+
+recursion:
+http://www.programiz.com/c-programming/c-recursion
+
+#include <stdio.h>
+int sum(int n);
+
+int main(){
+    int num,add;
+    printf("Enter a positive integer:\n");
+    scanf("%d",&num);
+    add=sum(num);
+    printf("sum=%d",add);
+}
+
+int sum(int n){
+    if(n==0)
+       return n;
+    else
+       return n+sum(n-1);    /*self call  to function sum() */
+}
+
+create a child process that creates a child process
+
+http://cboard.cprogramming.com/linux-programming/111069-create-child-process-creates-child-process.html
+
+Here is how to fork 10 children and wait for them to finish:
+
+http://stackoverflow.com/questions/876605/multiple-child-process
+
+pid_t pids[10];
+int i;
+int n = 10;
+
+/* Start children. */
+for (i = 0; i < n; ++i) {
+  if ((pids[i] = fork()) < 0) {
+    perror("fork");
+    abort();
+  } else if (pids[i] == 0) {
+    DoWorkInChild();
+    exit(0);
+  }
+}
+
+/* Wait for children to exit. */
+int status;
+pid_t pid;
+while (n > 0) {
+  pid = wait(&status);
+  printf("Child with PID %ld exited with status 0x%x.\n", (long)pid, status);
+  --n;  // TODO(pts): Remove pid from the pids array.
+}
+

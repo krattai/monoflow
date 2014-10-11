@@ -1,0 +1,245 @@
+DAT - 217 SET
+ADD - 201
+SUB - 234
+MUL - 238
+DIV - 227
+
+imt if more than
+ilt if less than
+ieq if equal
+ile if less than or equal
+ime if more than or equal
+
+sum
+rpt repeat
+lbl label
+whl while
+
+qut quote which means "
+qwt quit
+print or show
+
+move
+jump
+store
+
+
+
+				switch(swt) {
+					case 217 : /* DAT */
+						ctr++;
+						printf("%d\n", atoi(flat[ctr]) );
+						temp = atoi(flat[ctr]);
+						break;
+					case 201 : /* ADD */
+						ctr++;
+						printf("%d -> ", atoi(flat[ctr]) );
+						temp += atoi(flat[ctr]);
+						printf("%d\n", temp );
+						break;
+					case 234 : /* SUB */
+						ctr++;
+						printf("%d -> ", atoi(flat[ctr]) );
+						temp -= atoi(flat[ctr]);
+						printf("%d\n", temp );
+						break;
+					case 238 : /* MUL */
+						ctr++;
+						printf("%d -> ", atoi(flat[ctr]) );
+						temp = temp*atoi(flat[ctr]);
+						printf("%d\n", temp );
+						break;
+					case 227 : /* DIV */
+						ctr++;
+						printf("%d -> ", atoi(flat[ctr]) );
+						temp = temp/atoi(flat[ctr]);
+						printf("%d\n", temp );
+						break;
+					default :
+						printf("Invalid instruction %s\n", flat[ctr] );
+						ctr++;
+						break;
+				}
+
+
+structure example
+
+typedef struct {
+	char fld1[10];
+	char fld2[10];
+	char fld3[10];
+} TESTER;
+TESTER testform = {"test","test2Yup","test3"};
+
+/* this adds the value of the characters
+ * in the ctr position of flat[]
+ */
+for(t2=0; t2 < strlen(flat[ctr]); t2++) {
+	swt += *(flat[ctr] + t2);
+}
+
+Possible 3D IDE (3DE) in Go:
+https://github.com/gazed/vu
+
+X3D:
+http://en.wikipedia.org/wiki/VRML
+
+http://en.wikipedia.org/wiki/X3D
+
+http://www.web3d.org/wiki/index.php/Main_Page
+
+https://github.com/x3dom/x3dom/wiki
+
+https://sourceforge.net/projects/x3dom/
+
+https://savage.nps.edu/X3D-Edit/
+
+ASCII tables:
+http://en.wikipedia.org/wiki/ASCII
+
+/*				printf("%d is %s (val %d %d %d = %d: addr %d : last %d) ", temp, flat[ctr], *(flat[ctr] + 0), *(flat[ctr] + 1), *(flat[ctr] + 2), swt, (*flat)[ctr], 2+(*flat)[ctr]);
+
+				printf("length %zu ", strlen(flat[ctr]));
+*/
+
+
+May want to review possibly combining different object code to
+create single executable.  It might be that the best way
+is to have the core application call or be called by other
+applications that are in final, executable form:
+
+http://stackoverflow.com/questions/6767532/how-to-combine-different-programming-languages
+
+http://programmers.stackexchange.com/questions/137165/is-it-possible-to-combine-programming-languages
+
+http://www.embeddedheaven.com/mix-languages-linux.htm
+
+http://cboard.cprogramming.com/brief-history-cprogramming-com/18010-how-can-you-combine-several-programming-languages.html
+
+Want to look at sending function to a function (Many older
+languages simply had no way to do this kind of stuff. Other
+languages let you do it, but it's hard (for example, C has
+function pointers, but you have to declare and define the
+function somewhere else). Object-oriented programming languages
+aren't completely convinced that you should be allowed to do
+anything with functions.):
+
+http://www.joelonsoftware.com/items/2006/08/01.html
+
+Create MonoFlow core instructions set:
++ based on modified MIPS or x86
++ all caps which begins with $MF:
++ or possible $MF for begin and !MF for end instructions
+
+https://www.google.com/search?q=Forth+VM&ie=UTF-8&sa=Search&channel=fe&client=browser-ubuntu&hl=en#channel=fe&hl=en&q=Forth+VM+itc
+
+Threads:
+
+http://timmurphy.org/2010/05/04/pthreads-in-c-a-minimal-working-example/
+
+http://www.complang.tuwien.ac.at/forth/threaded-code.html
+
+
+Thinking that core should build ASCII table, but now wondering
+why?  Except to understand what values are math, logic, or
+machine codes for interpretation and node construction.
+
+Was thinking there might be 7 "types" of nodes (from fbp mail
+list):
+
+Not sure if this is something that has been discussed, maybe
+I'm verifying or re-verifying something that is already a
+given.
+
+It seems to me there are really 7 different node types based on
+three primary types:  constructors, destructors, and
+tranmutators.
+
+A constructor (c type) would combine inputs
+A destructor (d type) would break down inputs
+A transmutator (t type) would change inputs without destructing
+or constructing
+
+The combinations would therefore be c, d, t, cd, ct, dt, and
+cdt.
+
+Does that seem about right?
+
+I could be coming at this thought a little backwards.  It is
+specifically based on a "black box" node, so probing it might
+extrapolate how many input ports, how many output ports, and
+categorize the node based on only those observations.  A c node
+would have I>1, O<I, a d node would have I<O, O>1, and a t node
+would have I=1, O=1 or possibly I=O.
+
+So maybe that thinking is really outside the scope of fbp.  ???
+It might only be relevant for how I'm interpreting fbp.  I also
+admit that the questions that I ask might be out of context,
+although...  in a way...  that's the point.  ;)
+
+If one can see the lack of context in my posts (a blackboxed
+node reference), it alludes to the unstructured problem
+solving, or sandboxing (prototyping and RAD), that I am trying
+to solve for.  :D  As opposed to a constrained, structured,
+"flow through".
+
+
+/*
+ * So main() is basically an on/off switch.
+ * Main calls the primary node or entity, which in turn runs
+ * the primary node may or may not take data.  Main
+ * would need to know that.
+ *
+ * An entity / node consists of a label, data, instructions,
+ * and trigger.  In a natural world, the input / trigger
+ * point may not be obvious, but for the initial version
+ * we will assume that we know the input point if required
+ * or we assume that it is just a trigger.
+ *
+ * No, I think main will take input which will be an array
+ * which would then be sent to the primary node.
+ *
+ * Anyhow, once the primary node fires, it starts a chain
+ * reaction of processing its input and triggering other
+ * nodes as necessary.
+ */
+
+/* here's A mid term goal (something I've prototyped in the
+ *  past):
+ *
+ *  undefined_function(&instructions, &data);
+ *
+ *  What does that mean?
+ *
+ *  Well, it means that I can have an application that looks
+ *  like this (I'm going to use pseudocode):
+ *
+ *  int main(&fbp_mandate) {
+ *
+ *     fopen(fbp_mandate);
+ *
+ *     while fbp_mandate {
+ *
+ *        undefined_function(*fbp_mandate[a], *fbp_mandate[b]);
+ *        ++fbp_mandate;
+ *
+ *     }
+ *
+ *     fclose(fbp_mandate);
+ *     return;
+ *
+ *  }
+ *
+ *  That's it.  An application of variable size and scope, with
+ *  a completely arbitrary instruction and data set, that runs
+ *  in a linear fashion.
+ *
+ *  The internal workings of undefined_function() load the
+ *  instructions (precompiled) and data (predefined) references
+ *  from the file fbp_mandate, which references other files or
+ *  predefinitions of instructions and data.
+ *
+ *  I don't load more of the application or data than I need at
+ *  any given time.
+ *
+ */

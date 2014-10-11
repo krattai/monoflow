@@ -1,0 +1,22 @@
+http://aaronbonner.io/post/14969163463/cross-compiling-to-32bit-with-gcc
+
+Cross compiling to 32bit with GCC
+
+Normally if you want to cross compile something to produce a 32bit executable with gcc, you have to pass in the -m32 argument.
+
+$ gcc -m32 -o test32 test.c
+
+After a new install of Ubuntu 11.10 I was left scratching my head for a little bit with the following error:
+
+> In file included from /usr/include/stdio.h:28:0,
+>             from test.c:1:
+> /usr/include/features.h:323:26: fatal error: bits/predefs.h: No such file or directory
+> compilation terminated.
+
+In order to build 32bit executables you need to install the i386 libc dev package.
+
+$ sudo apt-get install libc6-dev-i386
+
+For a little bit of ‘fun’ if you pass the -S -masm=intel arguments to gcc, you can compile once with -m32, and once with -m64 to see how your program changes based on target architecture. It can (perhaps it’s just me :)) be Interesting to see the subtle changes in programs based on how they are assembled for x86_64 vs x86.
+
+$ gcc -m32 -S -masm=intel test.c

@@ -1,0 +1,18 @@
+Results from good build 13021300
+
+
+**** Build of configuration Debug for project monoflow001 ****
+
+make all 
+Building file: ../src/monoflow001.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/monoflow001.d" -MT"src/monoflow001.d" -o "src/monoflow001.o" "../src/monoflow001.c"
+Finished building: ../src/monoflow001.c
+ 
+Building target: monoflow001
+Invoking: GCC C Linker
+gcc  -o "monoflow001"  ./src/monoflow001.o   
+Finished building target: monoflow001
+ 
+
+**** Build Finished ****
