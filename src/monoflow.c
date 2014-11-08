@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include"scheduler.h"
+#include"network.h"
 
 /* inline function prototypes */
 int startup(int);
