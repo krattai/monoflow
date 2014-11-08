@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include"scheduler.h"
 
 /* non-functional inline function prototype templates */
 int startup(int);
