@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include"network.h"
 
 /* non-functional inline function prototype templates */
 int startup(int);
