@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include"scheduler.h"
 
 /* inline function prototypes */
 int startup(int);
